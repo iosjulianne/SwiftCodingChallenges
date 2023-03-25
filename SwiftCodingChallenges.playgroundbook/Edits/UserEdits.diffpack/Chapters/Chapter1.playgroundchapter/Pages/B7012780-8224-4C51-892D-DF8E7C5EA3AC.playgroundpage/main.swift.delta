@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>let array = [7, 3, 1, 8, 5, 4, 2, 6]
+
+// Split arrays
+func mergeSort(array:[Int]) -&gt; [Int] {
+    guard array.count &gt; 1 else { 
+        return array 
+    }
+    
+    let leftArray = Array(array[0..&lt;array.count/2])
+    let rightArray = Array(array[array.count/2..&lt;array.count])
+    
+    return merge(left: mergeSort(array: leftArray), right: mergeSort(array: rightArray))
+}
+
+// Merge arrays
+func merge(left: [Int], right: [Int]) -&gt; [Int] {
+    var mergedArray: [Int] = []
+    var left = left
+    var right = right
+    
+    while left.count &gt; 0 &amp;&amp; right.count &gt; 0 {
+        if left.first! &lt; right.first! {
+            mergedArray.append(left.removeFirst())
+        } else {
+            mergedArray.append(right.removeFirst())
+        }
+    }
+    return mergedArray + left + right
+}
+print(mergeSort(array: array))
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 809}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
