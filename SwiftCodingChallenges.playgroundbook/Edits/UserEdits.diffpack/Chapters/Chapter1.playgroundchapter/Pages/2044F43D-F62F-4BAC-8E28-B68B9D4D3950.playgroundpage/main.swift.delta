@@ -8,10 +8,12 @@
 	<array>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>
-let array = [1, 4, 6, 7, 10, 12, 18, 19, 23, 24, 34, 44, 58, 65]
-let animalArray = ["cat", "dog", "fish", "mouse", "rat", "sheep", "tiger", "walrus", "zebra"]
+			<string>/***
+ Binary Search 
+ Given an array of sorted integers, write a function to search for a given target integer. If the target exists, then return true. Otherwise, return false.
+ ***/
 
+let integerArray = [1, 4, 6, 7, 10, 12, 18, 19, 23, 24, 34, 44, 58, 65]
 
 func binarySearch(array: [Int], key: Int) -&gt; Bool {
     if array.count == 0 { return false }
@@ -43,15 +45,25 @@ func binarySearch(array: [Int], key: Int) -&gt; Bool {
     return false
 }
 
-binarySearch(array: array, key: 18)
-//binarySearch(array: animalArray, key: "fish")
+binarySearch(array: integerArray, key: 18)
+
+/***
+ Time Complexity: O(log n)
+ Best case time complexity: O(1) if the target is at the central index
+ Space Complexity: O(log n)
+ 
+ Binary search also works with strings.
+ let animalArray = ["cat", "dog", "fish", "mouse", "rat", "sheep", "tiger", "walrus", "zebra"]
+ binarySearch(array: animalArray, key: "fish")
+ ***/
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 995}</string>
+			<string>{0, 1371}</string>
 			<key>OriginalContent</key>
-			<string></string>
+			<string>
+</string>
 			<key>OriginalRange</key>
-			<string>{1, 0}</string>
+			<string>{0, 1}</string>
 		</dict>
 	</array>
 	<key>FormatVersion</key>
