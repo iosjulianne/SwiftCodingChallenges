@@ -11,11 +11,25 @@
 			<string>/***
  Binary Search 
  Given an array of sorted integers, write a function to search for a given target integer. If the target exists, then return true. Otherwise, return false.
+ 
+ 1. Repeat the question until you understand it. Ask any clarifying questions you have.
+ 2. Create a table of examples of expected input and output. Consider edge cases.
+ Input: [1, 4, 6, 7, 10, 12, 18, 19, 23, 24, 34, 44, 58, 65], 20
+ Output: false
+ Input: [1, 4, 6, 7, 10, 12, 18, 19, 23, 24, 34, 44, 58, 65], 90
+ Output: false
+ Input: [1, 4, 6, 7, 10, 12, 18, 19, 23, 24, 34, 44, 58, 65], 18
+ Output: true
+ 3. Explain your approach.
+ For binary search, you look at the middle value of the array and compare it to the target. If the target is bigger than the middle value, the new array becomes the right side of the array and the left half of the array is discarded; if target is smaller than the middle value, then the new array is the left half. You call binary search on the new array until the target is found or the array is exhausted. The properties we need are maxIndex and minIndex to track the ends of the array. We need the midIndex to calculate midValue and to become maxIndex or minIndex of the new array accordingly. We also need midValue to find the middle value which we compare to the target.
+ 4. Start coding
+ 5. Test your code
+ 6. Optimize
  ***/
 
 let integerArray = [1, 4, 6, 7, 10, 12, 18, 19, 23, 24, 34, 44, 58, 65]
 
-func binarySearch(array: [Int], key: Int) -&gt; Bool {
+func binarySearch(array: [Int], target: Int) -&gt; Bool {
     if array.count == 0 { return false }
     
     let minIndex = 0
@@ -23,29 +37,28 @@ func binarySearch(array: [Int], key: Int) -&gt; Bool {
     let midIndex = maxIndex/2
     let midValue = array[midIndex]
     
-    if key &lt; array[minIndex] || key &gt; array[maxIndex] {
-        print({"key \(key) is not in the array"})
+    if target &lt; array[minIndex] || target &gt; array[maxIndex] {
+        print({"Target integer \(target) is not in the array"})
         return false
     }
-    if key &gt; midValue {
+    if target &gt; midValue {
         let slice = Array(array[midIndex + 1..&lt;array.count])
-        binarySearch(array: slice, key: key)
+        binarySearch(array: slice, target: target)
     }
     
-    if key &lt; midValue {
+    if target &lt; midValue {
         let slice = Array(array[0..&lt;midIndex])
-        binarySearch(array: slice, key: key)
+        binarySearch(array: slice, target: target)
     }
     
-    if key == midValue {
-        print("key \(key) found in the array")
+    if target == midValue {
+        print("Target integer \(target) found in the array")
         return true 
     }
-    
     return false
 }
 
-binarySearch(array: integerArray, key: 18)
+binarySearch(array: integerArray, target: 18)
 
 /***
  Time Complexity: O(log n)
@@ -54,11 +67,11 @@ binarySearch(array: integerArray, key: 18)
  
  Binary search also works with strings.
  let animalArray = ["cat", "dog", "fish", "mouse", "rat", "sheep", "tiger", "walrus", "zebra"]
- binarySearch(array: animalArray, key: "fish")
+ binarySearch(array: animalArray, target: "fish")
  ***/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1371}</string>
+			<string>{0, 2593}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
