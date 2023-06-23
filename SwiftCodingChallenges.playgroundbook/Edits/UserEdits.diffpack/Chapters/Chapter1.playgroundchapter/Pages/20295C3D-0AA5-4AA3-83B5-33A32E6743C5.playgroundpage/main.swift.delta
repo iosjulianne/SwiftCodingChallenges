@@ -8,7 +8,15 @@
 	<array>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>func reverseString(_ string: String) -&gt; String {
+			<string>/**
+ Reverse a String
+ 
+ 1. Start with an empty string to hold the reversed string
+ 2. Iterate through the string 
+ Time Complexity: O(n)
+ **/
+
+func reverseString(_ string: String) -&gt; String {
     var reversedString = ""
     for character in string {
         reversedString = String(character) + reversedString
@@ -20,11 +28,11 @@ let testString = "Reverse this please"
 print(reverseString(testString))
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 274}</string>
+			<string>{0, 418}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
-			<string>{1, 0}</string>
+			<string>{0, 0}</string>
 		</dict>
 	</array>
 	<key>FormatVersion</key>
