@@ -12,7 +12,8 @@
  Reverse a String
  
  1. Start with an empty string to hold the reversed string
- 2. Iterate through the string 
+ 2. Iterate through each character of the string. Add the current character to the beginning of the string, then attach the rest of the reversed string
+ 
  Time Complexity: O(n)
  **/
 
@@ -28,7 +29,7 @@ let testString = "Reverse this please"
 print(reverseString(testString))
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 418}</string>
+			<string>{0, 540}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/**
+ Two Sum 
+ Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to the target.
+
+ 1. Create an empty dictionary to hold the current number and the complement to that number
+ 2. .Enumerate() through each number in the nums array. Enumerating gives you the index and value of each item in an array
+ 3. Get the value we need of the complement number to the current number (these two numbers add up to the target sum)
+ 4. We don't know if the complement number exists in the array. If the complement does exist, return the current index and the complement index as the answer. Otherwise, return empty array. 
+ **/
+
+func twoSum(_ nums: [Int], target: Int) -&gt; [Int] {
+    var complementDictionary: [Int:Int] = [:]
+    for (index, number) in nums.enumerated() {
+        let complementNumber = target - number
+        if let complementIndex = complementDictionary[complementNumber] {
+            return [index, complementIndex]
+        }
+        complementDictionary[number] = index
+    }
+    return []
+}
+
+let numberArray = [2, 3, 1, 8, 9, 21, 14, 33, 7]
+let target = 30
+
+print(twoSum(numberArray, target: target))
+
+/**
+ Time Complexity: O(n) 
+ The array does not need to be sorted
+ 
+ Array manipulation, hashmap usage, .enumerated()
+ **/
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1292}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
