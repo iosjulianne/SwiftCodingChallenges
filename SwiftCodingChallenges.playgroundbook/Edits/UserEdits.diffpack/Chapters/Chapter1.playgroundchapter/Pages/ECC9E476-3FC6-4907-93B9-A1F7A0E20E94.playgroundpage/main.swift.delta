@@ -40,10 +40,12 @@ print(twoSum(numberArray, target: target))
  The array does not need to be sorted
  
  Array manipulation, hashmap usage, .enumerated()
+ 
+ Two Sum with a sorted array can use the Two Pointer approach.
  **/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1292}</string>
+			<string>{0, 1357}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>

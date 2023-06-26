@@ -15,15 +15,13 @@
 7. **Kadane's Algorithm**: Kadane's algorithm is an efficient algorithm for finding the maximum sum of a contiguous subarray within an array of integers. The algorithm works by iterating through the array and maintaining two variables: `currentSum` and `maxSum`.
 
 ```
-func maxSubarraySum(_ nums: [Int]) -> Int {
-    var currentSum = nums[0]
-    var maxSum = nums[0]
-    
-    for i in 1..<nums.count {
-        currentSum = max(nums[i], currentSum + nums[i])
+func maxSubSum(_ numberArray: [Int]) -> Int {
+    var currentSum = 0
+    var maxSum = 0    
+    for number in numberArray {
+        currentSum = max(number, currentSum + number)
         maxSum = max(maxSum, currentSum)
     }
-    
     return maxSum
 }
 ```
