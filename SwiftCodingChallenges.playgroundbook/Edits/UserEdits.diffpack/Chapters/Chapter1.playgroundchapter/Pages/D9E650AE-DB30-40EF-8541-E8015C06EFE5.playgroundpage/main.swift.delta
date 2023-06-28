@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/**
+ Fibonacci
+ Technique: Memoization
+ **/
+
+var cache: [Int: Int] = [:]
+
+func fibonacci(_ n: Int) -&gt; Int {
+    if let result = cache[n] {
+        return result
+    }
+    
+    if n &lt;= 1 {
+        return n
+    }
+    
+    let result = fibonacci(n - 1) + fibonacci(n - 2)
+    cache[n] = result
+    
+    return result
+}
+
+let result = fibonacci(5)
+print(result)
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 357}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
