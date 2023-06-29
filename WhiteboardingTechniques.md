@@ -10,9 +10,11 @@
 
 5. **Divide and Conquer**: Divide and conquer is a technique that involves breaking down a problem into smaller subproblems, solving them independently, and combining the solutions to solve the original problem. It often relies on recursion and can be used for problems like sorting, searching, and optimization.
 
-6. **Greedy Algorithms**: Greedy algorithms make locally optimal choices at each step with the hope of finding a global optimum. They iteratively make the best choice at each stage without considering the overall future consequences.
+6. **Memoization**: Memoization is a technique used in programming to optimize the execution of functions by caching and reusing the results of expensive function calls. It involves storing the results of function calls in a cache or lookup table (such as a dictionary or array), so that subsequent calls with the same inputs can retrieve the cached result instead of re-computing it.
 
-7. **Kadane's Algorithm**: Kadane's algorithm is an efficient algorithm for finding the maximum sum of a contiguous subarray within an array of integers. The algorithm works by iterating through the array and maintaining two variables: `currentSum` and `maxSum`.
+7. **Greedy Algorithms**: Greedy algorithms make locally optimal choices at each step with the hope of finding a global optimum. They iteratively make the best choice at each stage without considering the overall future consequences.
+
+8. **Kadane's Algorithm**: Kadane's algorithm is an efficient algorithm for finding the maximum sum of a contiguous subarray within an array of integers. The algorithm works by iterating through the array and maintaining two variables: `currentSum` and `maxSum`.
 
 ```
 func maxSubSum(_ numberArray: [Int]) -> Int {
