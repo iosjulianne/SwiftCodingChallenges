@@ -7,3 +7,6 @@ My repo of swift coding challenges, their explanations and walk-throughs
 - Most Common Element
 - Merge Sort
 - Reverse a String
+- Two Sum
+- Smallest Difference (Backtracking)
+- Fibonacci (Memoization)
