@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/**
+ Count Paths
+ 
+ Implement a function countPaths that counts the number of unique paths from the top-left corner to the bottom-right corner of a grid. You can only move down or right. The function should use memoization to optimize performance.
+ 
+ Approach:
+ 1. Create a cache to store the results of previously computed paths.
+ 2. Define the countPaths function that takes the row and column indices as input.
+ 3. Check if the number of paths for the current cell is already in the cache. If so, return the cached result.
+ 4. If the current cell is the bottom-right corner (last row and last column), return 1 since there is only one unique path to reach that cell.
+ 5. If the current cell is outside the grid boundaries, return 0.
+ 6. Otherwise, recursively calculate the number of paths for the cell below (row + 1, col) and the cell to the right (row, col + 1) by calling the countPaths function. Store the results in variables.
+ 7. Calculate the total number of paths for the current cell by summing the results from step 6.
+ 8. Store the number of paths for the current cell in the cache for future reference.
+ 9. Return the number of paths for the current cell.
+ **/
+
+var pathsCache: [[Int]] = []
+
+func countPaths(row: Int, column: Int) -&gt; Int {
+    if row &gt;= pathsCache.count || column &gt;= pathsCache[row].count {
+        return 0
+    }
+    
+    if row == pathsCache.count - 1 &amp;&amp; column == pathsCache[row].count - 1 {
+        return 1
+    }
+    
+    if pathsCache[row][column] != 0 {
+        return pathsCache[row][column]
+    }
+    
+    let pathsDown = countPaths(row: row + 1, column: column)
+    let pathsRight = countPaths(row: row, column: column + 1)
+    
+    let totalPaths = pathsDown + pathsRight
+    
+    pathsCache[row][column] = totalPaths
+    
+    return totalPaths
+}
+
+/**
+ Time Complexity: O(row * column)
+ **/
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1835}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
