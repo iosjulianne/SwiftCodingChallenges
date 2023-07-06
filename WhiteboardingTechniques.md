@@ -28,3 +28,14 @@ func maxSubSum(_ numberArray: [Int]) -> Int {
 }
 ```
 Kadane's algorithm avoids the need for nested loops and achieves a time complexity of O(n).
+
+
+### Notes
+
+**Difference between [Int][Int] and [[Int]]**
+
+`[Int][Int]`: Represents a two-dimensional array or matrix where both the outer and inner arrays contain elements of type `Int`.
+
+`[[Int]]`: Represents an array of arrays, where the inner arrays can contain elements of any type, including `Int` or other types.
+
+The distinction is important because `[Int][Int]` enforces that all elements in the array structure are of type `Int`, whereas `[[Int]]` allows for flexibility in the types of elements within the inner arrays.
