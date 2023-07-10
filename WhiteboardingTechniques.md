@@ -1,4 +1,4 @@
-### Whiteboarding Techniques
+# Whiteboarding Techniques
 
 1. **Two Pointers Technique**: This technique involves using two pointers to traverse an array or a linked list simultaneously. It is commonly used for problems that involve searching, partitioning, or comparing elements in a collection.
 
@@ -14,8 +14,8 @@
 
 7. **Greedy Algorithms**: Greedy algorithms make locally optimal choices at each step with the hope of finding a global optimum. They iteratively make the best choice at each stage without considering the overall future consequences.
 
-8. **Kadane's Algorithm**: Kadane's algorithm is an efficient algorithm for finding the maximum sum of a contiguous subarray within an array of integers. The algorithm works by iterating through the array and maintaining two variables: `currentSum` and `maxSum`.
-
+8. **Kadane's Algorithm**: Kadane's algorithm is an efficient algorithm for finding the maximum sum of a contiguous subarray within an array of integers. The algorithm works by iterating through the array and maintaining two variables: `currentSum` and `maxSum`. 
+	
 ```
 func maxSubSum(_ numberArray: [Int]) -> Int {
     var currentSum = 0
@@ -29,8 +29,13 @@ func maxSubSum(_ numberArray: [Int]) -> Int {
 ```
 Kadane's algorithm avoids the need for nested loops and achieves a time complexity of O(n).
 
+### Kadane's Algorithm vs Sliding Window
+Kadane's algorithm - a specialized form of the sliding window technique tailored for finding the maximum subarray sum
 
-### Notes
+sliding window algorithm - a more general approach used for a broader set of problems involving windows or subsets of fixed size
+
+
+## Notes
 
 **Difference between [Int][Int] and [[Int]]**
 
