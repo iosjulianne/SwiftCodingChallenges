@@ -12,10 +12,10 @@
  Two Sum 
  Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to the target.
 
- 1. Create an empty dictionary to hold the current number and the complement to that number
- 2. .Enumerate() through each number in the nums array. Enumerating gives you the index and value of each item in an array
- 3. Get the value we need of the complement number to the current number (these two numbers add up to the target sum)
- 4. We don't know if the complement number exists in the array. If the complement does exist, return the current index and the complement index as the answer. Otherwise, return empty array. 
+ 1. Create an empty dictionary. The dictionary keys are the numbers in the array and the dictionary values are the array indices.
+ 2. .Enumerate() through each number in the nums array. Enumerating gives you the index and value of each item in an array.
+ 3. Get the value we need of the complement number to the current number (these two numbers add up to the target sum). 
+ 4. Check if the complement number already exists in the dictionary and if so, get its index. The current index and the complement index are your answer. Otherwise, save the current index and current number in the complementDictionary. If all array numbers are exhausted and a pair isn't found, return empty array. 
  **/
 
 func twoSum(_ nums: [Int], target: Int) -&gt; [Int] {
@@ -45,7 +45,7 @@ print(twoSum(numberArray, target: target))
  **/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1357}</string>
+			<string>{0, 1523}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
