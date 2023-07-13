@@ -10,3 +10,4 @@ My repo of swift coding challenges, their explanations and walk-throughs
 - Two Sum
 - Smallest Difference (Backtracking)
 - Fibonacci (Memoization)
+- Count Paths (Memoization)
