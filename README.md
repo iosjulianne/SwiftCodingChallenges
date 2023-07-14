@@ -11,3 +11,4 @@ My repo of swift coding challenges, their explanations and walk-throughs
 - Smallest Difference (Backtracking)
 - Fibonacci (Memoization)
 - Count Paths (Memoization)
+- Palindrome (Two Pointer)
