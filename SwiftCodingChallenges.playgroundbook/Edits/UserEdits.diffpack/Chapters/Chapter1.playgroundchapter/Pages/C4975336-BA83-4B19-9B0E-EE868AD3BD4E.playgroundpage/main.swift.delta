@@ -14,10 +14,53 @@
  Given a string, write a function to determine if it is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.
  
  For example, the string "A man, a plan, a canal: Panama" is a palindrome, while "Racecar" is also a palindrome.
+ 
+ 1. Clean string so that it is only letters and numbers and all lowercase
+ 2. Create pointers for either end of the string
+ 3. While left pointer is less than right pointer, set the left and right characters to be the array at respective pointer indices
+ 4. If characters are not equal return false. If they are equal, continue to next characters. Return true if always equal.
+ **/
+
+func isPalindrome(_ str: String) -&gt; Bool {
+    let lowercaseString = str.lowercased().filter { $0.isLetter || $0.isNumber }
+    var leftPointer = 0
+    var rightPointer = lowercaseString.count - 1
+    
+    while leftPointer &lt; rightPointer {
+        let leftChar = Array(lowercaseString)[leftPointer]
+        let rightChar = Array(lowercaseString)[rightPointer]
+        
+        if leftChar != rightChar {
+            return false
+        }
+        
+        leftPointer += 1
+        rightPointer -= 1
+    }
+    
+    return true
+}
+
+print(isPalindrome("A man, a plan, a canal: Panama"))
+print(isPalindrome("Racecar"))
+print(isPalindrome("Not palindrome"))
+
+/**
+ Time complexity: O(n)
+ n is the length of the input string. You iterate through half of the string using the two pointers.
+ 
+ Methods used: lowercased(), filter()
+ 
+ ---------------------------------------------------------
+ 
+ Other approaches:
+ 1. Reverse and Compare: You can reverse the given string and compare it with the original string. This approach requires additional space for the reversed string.
+ 2. Stack: You can use a stack to store the characters of the first half of the string. Then, while iterating through the second half of the string, you can compare each character with the top of the stack. This approach requires additional space for the stack.
+ 3. Recursive: You can recursively check if the first and last characters of the string match, and then recursively check the substring without those characters. If the substring is empty or has only one character, it is considered a palindrome. This approach may have a higher space complexity due to the recursive function calls.
  **/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 372}</string>
+			<string>{0, 2419}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
