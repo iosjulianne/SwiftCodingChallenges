@@ -10,6 +10,7 @@
 			<key>ModifiedContent</key>
 			<string>/**
  Count Paths
+ Technique: Memoization
  
  Implement a function countPaths that counts the number of unique paths from the top-left corner to the bottom-right corner of a grid. You can only move down or right. The function should use memoization to optimize performance.
  
@@ -55,7 +56,7 @@ func countPaths(row: Int, column: Int) -&gt; Int {
  **/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1835}</string>
+			<string>{0, 1859}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>

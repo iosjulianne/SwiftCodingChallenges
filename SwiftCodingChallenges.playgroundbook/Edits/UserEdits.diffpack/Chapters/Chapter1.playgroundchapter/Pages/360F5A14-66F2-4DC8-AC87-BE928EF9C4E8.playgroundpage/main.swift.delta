@@ -10,10 +10,9 @@
 			<key>ModifiedContent</key>
 			<string>/**
  Smallest Difference
+ Technique: Two Pointer
  
  Given a sorted array of integers, find a pair of numbers that have the smallest absolute difference. Return the pair of numbers.
- 
- Can be done using Two Pointer technique.
  
  1. Initialize two pointers: one starting at the left of the array and one starting at the right
  2. Create two variables: one to track the smallestDifference and one to track the pointers/indices of the numbers that make up the smallest difference
@@ -54,7 +53,7 @@ func smallestDifference(array: [Int]) -&gt; (Int, Int)? {
  **/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1604}</string>
+			<string>{0, 1584}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>

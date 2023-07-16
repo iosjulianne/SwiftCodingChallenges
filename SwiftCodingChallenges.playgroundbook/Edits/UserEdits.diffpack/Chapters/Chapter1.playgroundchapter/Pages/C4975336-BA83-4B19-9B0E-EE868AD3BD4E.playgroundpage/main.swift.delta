@@ -10,6 +10,7 @@
 			<key>ModifiedContent</key>
 			<string>/**
  Palindrome
+ Technique: Two Pointer
  
  Given a string, write a function to determine if it is a palindrome. A palindrome is a word, phrase, number, or other sequence of characters that reads the same forward and backward, ignoring spaces, punctuation, and capitalization.
  
@@ -60,7 +61,7 @@ print(isPalindrome("Not palindrome"))
  **/
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 2419}</string>
+			<string>{0, 2443}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>

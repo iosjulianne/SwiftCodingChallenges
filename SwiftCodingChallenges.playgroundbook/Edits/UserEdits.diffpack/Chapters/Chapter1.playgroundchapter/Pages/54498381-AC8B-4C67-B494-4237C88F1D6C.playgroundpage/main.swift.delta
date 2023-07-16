@@ -10,10 +10,10 @@
 			<key>ModifiedContent</key>
 			<string>/**
  All Possible Subsets
+ Technique: Backtracking
  
  Given a set of distinct integers, return all possible subsets.
  
- Technique used: Backtracking
  **/
 
 func subsets(_ nums: [Int]) -&gt; [[Int]] {
@@ -41,7 +41,7 @@ let numbers = [1, 2, 3]
 print(subsets(numbers))
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 648}</string>
+			<string>{0, 643}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
