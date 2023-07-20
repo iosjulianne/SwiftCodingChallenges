@@ -8,7 +8,8 @@ My repo of swift coding challenges, their explanations and walk-throughs
 - Merge Sort
 - Reverse a String
 - Two Sum
-- Smallest Difference (Backtracking)
+- Smallest Difference (Two Pointer)
+- All Possible Subsets (Backtracking)
 - Fibonacci (Memoization)
 - Count Paths (Memoization)
 - Palindrome (Two Pointer)
