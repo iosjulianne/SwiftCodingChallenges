@@ -10,15 +10,55 @@
 			<key>ModifiedContent</key>
 			<string>/*
  Given an array of integers, find the longest subarray that contains only two unique numbers.
+ Technique: Sliding Window
  
  For example:
  Input: [1, 2, 2, 3, 1, 2, 3, 3]
- Output: [2, 2, 3, 1, 2]
+ Output: [1, 2, 2]
  */
+
+func longestSubarrayWithTwoUniqueNumbers(_ numberArray: [Int]) -&gt; [Int] {
+    var leftPointer = 0
+    var rightPointer = 0
+    var maxSubarray = [Int]()
+    var numFrequency = [Int: Int]()
+    
+    while rightPointer &lt; numberArray.count {
+        let num = numberArray[rightPointer]
+        numFrequency[num, default: 0] += 1
+        
+        // Contract the window from the left side if the number of distinct numbers exceeds two
+        while numFrequency.keys.count &gt; 2 {
+            let leftNum = numberArray[leftPointer]
+            numFrequency[leftNum]! -= 1
+            if numFrequency[leftNum] == 0 {
+                numFrequency.removeValue(forKey: leftNum)
+            }
+            leftPointer += 1
+        }
+        
+        // Check if the current subarray is longer than the maximum subarray found so far
+        if rightPointer - leftPointer + 1 &gt; maxSubarray.count {
+            maxSubarray = Array(numberArray[leftPointer...rightPointer])
+        }
+        
+        rightPointer += 1
+    }
+    
+    return maxSubarray
+}
+
+print(longestSubarrayWithTwoUniqueNumbers([1, 2, 2, 3, 1, 2, 3, 3]))
+print(longestSubarrayWithTwoUniqueNumbers([1, 2, 3, 3, 4, 4, 4, 3, 3, 2, 4, 1, 2, 2]))
+
+/*
+ Time complexity: O(n)
+ Space complexity: O(1)
  
+ */
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 177}</string>
+			<string>{0, 1449}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
