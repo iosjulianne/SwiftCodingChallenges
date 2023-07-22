@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Minimum Subarray Size
+ Technique: Sliding Window
+ 
+ Given an array of integers and a target sum, find the minimum size of a contiguous subarray (a subarray with consecutive elements) whose sum is greater than or equal to the target sum. If no such subarray exists, return 0.
+ */
+
+func minSubArraySize(_ nums: [Int], _ target: Int) -&gt; Int {
+    var start = 0
+    var sum = 0
+    var minLength = Int.max
+    
+    for end in 0..&lt;nums.count {
+        sum += nums[end]
+        
+        while sum &gt;= target {
+            minLength = min(minLength, end - start + 1)
+            sum -= nums[start]
+            start += 1
+        }
+    }
+    
+    return minLength == Int.max ? 0 : minLength
+}
+
+print(minSubArraySize([2, 3, 1, 2, 4, 3], 7))
+print(minSubArraySize([2, 3, 4, 1, 1, 2], 7))
+
+
+/*
+ Time complexity: O(n)
+ Space complexity: O(1)
+ 
+ */
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 839}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
