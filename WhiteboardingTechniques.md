@@ -1,5 +1,7 @@
 # Whiteboarding Techniques
 
+1. **One Pass/Iterative Approach**: The One Pass Approach is a common technique used in many array-related problems where the goal is to find the best possible result by processing the elements in one go without the need for multiple iterations. Initialize necessary variables to keep track of required information.
+
 1. **Two Pointers Technique**: This technique involves using two pointers to traverse an array or a linked list simultaneously. It is commonly used for problems that involve searching, partitioning, or comparing elements in a collection.
 
 2. **Sliding Window Technique**: The sliding window technique involves maintaining a dynamic window (a subarray or subsequence) within an array or string and sliding it to perform computations or find optimal solutions. It is often used for problems that involve finding subarrays with a specific property or optimizing a solution over a range of elements.
