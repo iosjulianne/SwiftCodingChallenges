@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Stock Market
+ Technique: One Pass/Iterative
+ 
+ You have an array of integers representing stock prices on different days. You want to maximize your profit by buying and selling the stock at the right time. Write a function to find the maximum profit you can achieve.
+ 
+ Input: [7, 1, 5, 3, 6, 4]
+ Output: 5 // Buy on day 2 (price = 1) and sell on day 5 (price = 6) for a profit of 6 - 1 = 5.
+ 
+ 1. Make sure array is not empty
+ 2. Create variables to track minPrice and maxProfit
+ 3. Iterate through array setting minPrice to lowest of minPrice or current price; calculate potentialProfit and set maxProfit to the biggest of maxProfit or potential profit
+ 4. Return max profit
+ */
+
+func stockMarket(_ array: [Int]) -&gt; Int {
+    guard array.count &gt; 0 else { return 0 }
+    
+    var minPrice = array[0]
+    var maxProfit = 0
+    
+    for price in array {
+        minPrice = min(minPrice, price)
+        let potentialProfit = price - minPrice
+        maxProfit = max(maxProfit, potentialProfit)
+    }
+    
+    return maxProfit
+}
+
+print(stockMarket([7, 1, 5, 3, 6, 4]))
+print(stockMarket([1, 7, 2, 5, 6, 1]))
+
+/*
+ Time complexity: O(n)
+ Space complexity: O(1)
+ Methods used: min(), max()
+ */
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1192}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
