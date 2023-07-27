@@ -8,7 +8,13 @@
 	<array>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>var colorArray = ["red", "green", "green", "black", "blue", "yellow", "red", "green", "yellow", "red", "red", "green", "green", "grey", "purple", "orange", "grey", "blue", "red", "green", "yellow", "orange", "purple", "black", "red", "blue", "green", "orange", "blue", "white", "yellow", "blue", "red", "green", "orange", "purple", "blue", "black"]
+			<string>/*
+ Most Common Element
+ Technique: Frequency Counting
+ 
+ */
+
+var colorArray = ["red", "green", "green", "black", "blue", "yellow", "red", "green", "yellow", "red", "red", "green", "green", "grey", "purple", "orange", "grey", "blue", "red", "green", "yellow", "orange", "purple", "black", "red", "blue", "green", "orange", "blue", "white", "yellow", "blue", "red", "green", "orange", "purple", "blue", "black"]
 
 func getMostCommonColor(array: [String]) -&gt; [String] {
     
@@ -30,9 +36,14 @@ func getMostCommonColor(array: [String]) -&gt; [String] {
 }
 
 getMostCommonColor(array: colorArray)
+
+/*
+ Time complexity: O(n)
+ Space complexity: O(n)
+ */
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 841}</string>
+			<string>{0, 958}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
