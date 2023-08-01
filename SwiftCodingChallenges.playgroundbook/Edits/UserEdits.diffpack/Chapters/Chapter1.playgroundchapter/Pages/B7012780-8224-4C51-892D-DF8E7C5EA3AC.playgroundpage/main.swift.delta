@@ -8,7 +8,12 @@
 	<array>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>let array = [7, 3, 1, 8, 5, 4, 2, 6]
+			<string>/*
+ Merge Sort
+ Technique: Divide and Conquer
+ */
+
+let array = [7, 3, 1, 8, 5, 4, 2, 6]
 
 // Split arrays
 func mergeSort(array:[Int]) -&gt; [Int] {
@@ -38,9 +43,14 @@ func merge(left: [Int], right: [Int]) -&gt; [Int] {
     return mergedArray + left + right
 }
 print(mergeSort(array: array))
+
+/*
+ Time complexity: O(n log n)
+ Space complexity: O(n) because it requires additional space to store the sorted subarrays during the merging process
+ */
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 809}</string>
+			<string>{0, 1015}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
