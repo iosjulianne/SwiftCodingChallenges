@@ -49,6 +49,7 @@ sliding window algorithm - a more general approach used for a broader set of pro
 
 The distinction is important because `[Int][Int]` enforces that all elements in the array structure are of type `Int`, whereas `[[Int]]` allows for flexibility in the types of elements within the inner arrays.
 
-**XOR (exclusive OR) bitwise operation**
+**XOR (exclusive OR) bitwise operation**<br>
+*Seen in Single Numbers, Unique Numbers*
 
 The XOR bitwise operation (represented by `^` in Swift) returns 1 if two bits are different and 0 if they are the same. The key property of XOR is that it is both commutative and associative. This means that if we XOR all the elements in an array together, all elements that appear twice will cancel each other out, leaving only the XOR result of the elements that appear only once.
