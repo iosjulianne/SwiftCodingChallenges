@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Given a sorted array of integers, find the first and last occurrence of a target value. If the target is not found in the array, return [-1, -1].
+ 
+ let nums = [5, 7, 7, 8, 8, 10]
+ let target = 8
+ let result = searchRange(nums, target) // Output: [3, 4]
+ 
+ Your solution should have a time complexity of O(log n).
+ */
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 322}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{0, 0}</string>
+		</dict>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>func searchRange(_ nums: [Int], _ target: Int) -&gt; [Int] {
+    let minIndex = 0
+    let maxIndex = nums.count - 1
+    let midIndex = nums.count / 2
+    let midValue = nums[midIndex]
+    
+    if target &lt; midValue {
+        
+    }
+    
+    for number in nums {
+        let leftNums = Array(0..&lt;nums.count/2)
+        let rightNums = Array(nums.count/2 + 1 ..&lt; nums.count)
+        if number == target {
+            return 
+        }
+    }
+    return 
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{323, 448}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
