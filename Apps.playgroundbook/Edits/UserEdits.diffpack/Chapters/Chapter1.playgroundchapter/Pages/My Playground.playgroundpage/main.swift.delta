@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Question: Implement a simple To-Do List app in iOS. The app should have the following features:
+ 
+ 1. Display a list of tasks with their titles.
+ - Start with UI: make a List view 
+ - Make custom cell views with a label for title
+ 2. Allow users to add new tasks to the list.
+ - Create an array of Strings to hold the tasks in the list
+ - Add button to header/navbar to add item to array -&gt; alert pop up
+ 3. Enable users to mark tasks as completed.
+ - Add "completed" label to cell
+ - Add swipe left to mark as completed
+ 4. Provide the ability to delete tasks from the list.
+ - Add swipe right to delete
+ 5. Persist the tasks so that they are available even after the app is closed.
+ - save list in user defaults?
+ 6. Feel free to sketch out or describe how you would approach designing and implementing this To-Do List app in iOS.
+ */
+
+import SwiftUI
+import PlaygroundSupport
+
+struct Task: Identifiable {
+    let id = UUID()
+    let title: String
+    let isCompleted = false
+}
+
+struct TaskList: View {
+    @Binding var tasks: [Task]
+    
+    init(tasks: Binding&lt;[Task]&gt;) {
+        _tasks = tasks
+    }
+    
+    var body: some View {
+        List {
+            ForEach(tasks) { task in
+                Text(task.title)
+            }
+            .onDelete(perform: deleteTask)
+        }
+    }
+    
+    private func deleteTask(at offsets: IndexSet) {
+        tasks.remove(atOffsets: offsets)
+    }
+}
+
+struct TaskForm: View {
+    @Binding var tasks: [Task]
+    @State private var newTaskTitle = ""
+    
+    init(tasks: Binding&lt;[Task]&gt;) {
+        _tasks = tasks
+    }
+    
+    var body: some View {
+        Form {
+            TextField("New Task", text: $newTaskTitle) //$ symbol is used as a shorthand to create a binding to a property; use when setting and getting
+            Button("Add Task") {
+                tasks.append(Task(title: newTaskTitle))
+                newTaskTitle = ""
+            }
+        }
+    }
+}
+
+struct ContentView: View {
+    @State private var tasks: [Task] = []
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                TaskList(tasks: $tasks)
+                TaskForm(tasks: $tasks)
+            }
+        }
+        .navigationBarTitle("To-Do List")
+    }
+}
+
+PlaygroundPage.current.setLiveView(ContentView())
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 2275}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
