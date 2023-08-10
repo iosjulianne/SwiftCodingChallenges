@@ -50,6 +50,8 @@ struct Stack {
 
 /*
  This implementation had getMin() time complexity at O(n) because of min() function. Can do better with below implementation, which gives getMin() O(1)/constant time complexity.
+ 
+ minStack creates a stack that is equal in length/size as the original stack, but the last element is always the smallest number. If the next element to be pushed onto the stack is larger, minStack just adds a repeat of the smallest number so the smallest number is always accessible as the last element.
  */
 
 struct BetterStack {
@@ -83,14 +85,29 @@ struct BetterStack {
         return minStack.last
     }
 }
+
+var myStack = BetterStack()
+myStack.push(9)
+print(myStack)
+myStack.push(4)
+print(myStack)
+myStack.push(20)
+print(myStack)
+myStack.push(11)
+print(myStack)
+myStack.push(1)
+print(myStack)
+myStack.pop()
+print(myStack)
+myStack.getMin()
+
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 1937}</string>
+			<string>{0, 2477}</string>
 			<key>OriginalContent</key>
-			<string>
-</string>
+			<string></string>
 			<key>OriginalRange</key>
-			<string>{0, 1}</string>
+			<string>{0, 0}</string>
 		</dict>
 	</array>
 	<key>FormatVersion</key>
