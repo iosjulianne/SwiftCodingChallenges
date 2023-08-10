@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Problem: Implement a Stack with Min Operation
+ 
+ Design a stack that supports push, pop, and min operations, where min retrieves the minimum element in constant time.
+ 
+ Your implementation should support the following operations:
+ 
+ push(x): Add an element x to the stack.
+ pop(): Remove and return the top element from the stack.
+ top(): Return the top element of the stack without removing it.
+ getMin(): Retrieve the minimum element in the stack.
+ All operations should be performed in constant time.
+ 
+ Remember, in a stack, the last element added is the first one to be removed (Last In, First Out).
+ */
+
+struct Stack {
+    var stack: [Int]
+    
+    mutating func push(_ x: Int) {
+        stack.append(x)
+    }
+    
+    mutating func pop() -&gt; Int? {
+        guard let element = stack.last else { return nil }
+        stack.removeLast()
+        return element
+    }
+    
+    func top() -&gt; Int? {
+        guard let element = stack.first else { return nil }
+        return element
+    }
+    
+    func getMin() -&gt; Int? {
+        guard let element = stack.min() else { return nil }
+        return element
+    }
+}
+
+/*
+ This implementation had getMin() time complexity at O(n) because of min() function. Can do better with below implementation, which gives getMin() O(1)/constant time complexity.
+ */
+
+struct BetterStack {
+    private var stack: [Int]
+    private var minStack: [Int] = []
+    
+    init() {
+        stack = []
+    }
+    
+    mutating func push(_ x: Int) {
+        stack.append(x)
+        if let min = minStack.last {
+            minStack.append(Swift.min(x, min))
+        } else {
+            minStack.append(x)
+        }
+    }
+    
+    mutating func pop() -&gt; Int? {
+        guard !stack.isEmpty else { return nil }
+        minStack.removeLast()
+        return stack.removeLast()
+    }
+    
+    func top() -&gt; Int? {
+        return stack.last
+    }
+    
+    func getMin() -&gt; Int? {
+        return minStack.last
+    }
+}
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1937}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
