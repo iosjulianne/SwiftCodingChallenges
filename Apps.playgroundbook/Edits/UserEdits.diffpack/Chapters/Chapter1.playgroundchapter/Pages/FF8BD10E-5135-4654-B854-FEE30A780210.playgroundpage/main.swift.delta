@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Problem: Implement a Binary Search Tree (BST)
+ 
+ Design and implement a binary search tree (BST) data structure. Your implementation should support the following operations:
+ 
+ insert(_ val: Int): Inserts a new node with the given value into the BST.
+ delete(_ val: Int): Deletes a node with the given value from the BST if it exists.
+ search(_ val: Int) -&gt; Bool: Returns true if a node with the given value exists in the BST, otherwise returns false.
+ getMin() -&gt; Int?: Returns the minimum value in the BST.
+ getMax() -&gt; Int?: Returns the maximum value in the BST.
+ inorderTraversal() -&gt; [Int]: Returns an array of values obtained by performing an inorder traversal of the BST.
+ Remember that in a binary search tree, for any given node:
+ 
+ All nodes in the left subtree have values less than the node's value.
+ All nodes in the right subtree have values greater than the node's value.
+ */
+
+// Must use class for recursion to work because they are reference types
+class TreeNode {
+    var value: Int
+    var left: TreeNode?
+    var right: TreeNode?
+    
+    init(_ value: Int){
+        self.value = value
+        self.left = nil
+        self.right = nil
+    }
+}
+
+class BinarySearchTree {
+    private var root: TreeNode?
+    
+    func insert(_ value: Int) {
+        root = insertNode(root, value)
+    }
+    
+    // Insert a value
+    private func insertNode(_ node: TreeNode?, _ value: Int) -&gt; TreeNode {
+        guard let node = node else {
+            return TreeNode(value)
+        }
+        
+        if value &lt; node.value {
+            node.left = insertNode(node.left, value)
+        } else if value &gt; node.value {
+            node.right = insertNode(node.right, value)
+        }
+        
+        return node
+    }
+    
+    // Delete a value 
+    func delete(_ val: Int) {
+        root = deleteNode(root, val)
+    }
+    
+    private func deleteNode(_ node: TreeNode?, _ value: Int) -&gt; TreeNode? {
+        guard let node = node else {
+            return nil
+        }
+        
+        if value &lt; node.value {
+            node.left = deleteNode(node.left, value)
+        } else if value &gt; node.value {
+            node.right = deleteNode(node.right, value)
+        } else {
+            if node.left == nil {
+                return node.right
+            } else if node.right == nil {
+                return node.left
+            }
+            
+            // Node has two children, replace with the inorder successor
+            node.value = minValue(node.right!)!
+            node.right = deleteNode(node.right, node.value)
+        }
+        
+        return node
+    }
+    
+    // Search for a value 
+    func search(_ val: Int) -&gt; Bool {
+        return searchNode(root, val)
+    }
+    
+    private func searchNode(_ node: TreeNode?, _ value: Int) -&gt; Bool {
+        guard let node = node else {
+            return false
+        }
+        
+        if value == node.value {
+            return true
+        } else if value &lt; node.value {
+            return searchNode(node.left, value)
+        } else {
+            return searchNode(node.right, value)
+        }
+    }
+    
+    // Get the minimum value 
+    func getMin() -&gt; Int? {
+        return minValue(root)
+    }
+    
+    private func minValue(_ node: TreeNode?) -&gt; Int? {
+        var current = node
+        while let left = current?.left {
+            current = left
+        }
+        return current?.value
+    }
+    
+    // Get the maximum value 
+    func getMax() -&gt; Int? {
+        return maxValue(root)
+    }
+    
+    private func maxValue(_ node: TreeNode?) -&gt; Int? {
+        var current = node
+        while let right = current?.right {
+            current = right
+        }
+        return current?.value
+    }
+    
+    // Perform inorder traversal and return an array of values
+    func inorderTraversal() -&gt; [Int] {
+        var result: [Int] = []
+        inorder(root, &amp;result)
+        return result
+    }
+    
+    private func inorder(_ node: TreeNode?, _ result: inout [Int]) {
+        guard let node = node else {
+            return
+        }
+        inorder(node.left, &amp;result)
+        result.append(node.value)
+        inorder(node.right, &amp;result)
+    }
+}
+
+var bst = BinarySearchTree()
+bst.insert(5)
+bst.insert(3)
+bst.insert(7)
+bst.insert(2)
+bst.insert(4)
+
+print(bst.inorderTraversal())
+
+bst.delete(3)
+print(bst.inorderTraversal())
+
+print(bst.search(4))
+print(bst.search(6))
+
+print(bst.getMin())
+print(bst.getMax())
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 4388}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
