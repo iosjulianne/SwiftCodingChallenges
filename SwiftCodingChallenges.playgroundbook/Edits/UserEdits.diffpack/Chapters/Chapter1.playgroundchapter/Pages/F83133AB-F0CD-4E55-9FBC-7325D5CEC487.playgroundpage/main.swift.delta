@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Range Sum
+ Technique: Prefix sum/Cumulative sum
+ 
+ Question: Given an array nums of integers and two indices left and right, find the sum of all the elements between indices left and right (inclusive) in the array. Implement a function rangeSum(nums: [Int], left: Int, right: Int) -&gt; Int that returns the sum.
+ 
+You should implement this function using the prefix sum technique for optimal efficiency.
+ 
+ let nums = [1, 2, 3, 4, 5]
+ let left = 1
+ let right = 3
+ let result = rangeSum(nums: nums, left: left, right: right)
+ // Expected output: 9 (2 + 3 + 4)
+ */
+
+func calculatePrefixSum(_ nums: [Int]) -&gt; [Int] {
+    let length = nums.count
+    var prefixSum = Array(repeating: 0, count: length)
+    prefixSum[0] = nums[0]
+    
+    for i in 1..&lt;length {
+        prefixSum[i] = prefixSum[i-1]+nums[i]
+    }
+    return prefixSum
+}
+
+func rangeSum(_ prefixSum: [Int], left: Int, right: Int) -&gt; Int {
+    if left == 0 {
+        return prefixSum[right]
+    }
+    return prefixSum[right] 
+        - prefixSum[left - 1]
+}
+
+print(calculatePrefixSum([1, 2, 3, 4, 5]))
+print(rangeSum(calculatePrefixSum([1, 2, 3, 4, 5]), left: 1, right: 3))
+
+
+/*
+ It's important to note that the O(1) time complexity for subarray sum queries holds true only if the prefix sum array is already available. If you need to factor in the time to precompute the prefix sum array, then the overall time complexity would be O(n + q), where n is the array size and q is the number of queries.
+ */
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1463}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
