@@ -4,6 +4,9 @@
 
 2. **Frequency Counting/Counting Occurrences**: Frequency counting, also known as counting occurrences, is a technique to efficiently count the number of occurrences of elements or items in a data set, typically in an array, list, or collection and only requires a single pass through the data. The goal is to determine the frequency of each distinct element and store this information for further analysis or processing. (e.g. most common elements, detecting duplicates, identifying patterns in data)
 
+3. **Prefix Sum/Cumulative Sum Technique**: The prefix sum technique, also known as the cumulative sum technique, is a common algorithmic approach used to efficiently compute the sum of elements in a given array or sequence. It is particularly useful when you need to perform multiple queries for subarray sums in a more efficient manner. This technique is particularly useful in scenarios where you have a fixed array and need to perform multiple queries on different subarrays, such as range sum queries, sliding window problems, or other related tasks.
+
+
 1. **Two Pointers Technique**: This technique involves using two pointers to traverse an array or a linked list simultaneously. It is commonly used for problems that involve searching, partitioning, or comparing elements in a collection.
 
 2. **Sliding Window Technique**: The sliding window technique involves maintaining a dynamic window (a subarray or subsequence) within an array or string and sliding it to perform computations or find optimal solutions. It is often used for problems that involve finding subarrays with a specific property or optimizing a solution over a range of elements.

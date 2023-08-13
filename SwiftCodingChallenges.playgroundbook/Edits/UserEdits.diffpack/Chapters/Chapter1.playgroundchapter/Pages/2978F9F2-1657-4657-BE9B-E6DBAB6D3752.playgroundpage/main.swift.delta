@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ 1. Precomputation: Given an array arr of length n, create a new array prefixSum of the same length.
+ 2. Initialization: Initialize the first element of prefixSum to be the same as the first element of arr, i.e., prefixSum[0] = arr[0].
+ 3. Prefix Sum Calculation: For each subsequent index i from 1 to n-1, calculate the cumulative sum up to that index by adding the current element of arr to the previous element of prefixSum. In mathematical terms, prefixSum[i] = prefixSum[i-1] + arr[i].
+ 4. Querying Subarray Sums: To find the sum of elements in a subarray [l, r] (where 0 &lt;= l &lt;= r &lt; n), you can use the precomputed prefixSum array. The sum of elements in the subarray [l, r] can be calculated as prefixSum[r] - prefixSum[l] + arr[l], where you subtract the prefix sum up to index l-1 from the prefix sum up to index r.
+ */
+
+func calculatePrefixSum(_ arr: [Int]) -&gt; [Int] {
+    let n = arr.count
+    var prefixSum = Array(repeating: 0, count: n)
+    prefixSum[0] = arr[0]
+    
+    for i in 1..&lt;n {
+        prefixSum[i] = prefixSum[i - 1] + arr[i]
+    }
+    
+    return prefixSum
+}
+
+func subarraySum(_ prefixSum: [Int], _ l: Int, _ r: Int) -&gt; Int {
+    if l == 0 {
+        return prefixSum[r]
+    }
+    return prefixSum[r] - prefixSum[l - 1]
+}
+
+// Example usage
+let arr = [1, 2, 3, 4, 5]
+let prefixSum = calculatePrefixSum(arr)
+print(subarraySum(prefixSum, 1, 3))  // Output: 9 (2 + 3 + 4)
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1397}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
