@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BaseFile</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/Template.playgroundpage/main.swift</string>
+	<key>Diffs</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>/*
+ Longest Substring Without Repeating Characters
+ Technique: Sliding Window
+ 
+ Given a string, find the length of the longest substring without repeating characters.
+ 
+ For example, given the string "abcabcbb", the longest substring without repeating characters is "abc", which has a length of 3.
+ */
+
+func longestSubstring(_ str: String) -&gt; String {
+    guard str.count &gt; 1 else { return str }
+    
+    var charSet: Set&lt;Character&gt; = []
+    var currentSubstring = ""
+    var longestSubstring = ""
+    
+    var leftIndex = str.startIndex
+    
+    for rightIndex in str.indices {
+        let char = str[rightIndex]
+        
+        // Remove characters from the left side of the window
+        while charSet.contains(char) {
+            charSet.remove(str[leftIndex])
+            leftIndex = str.index(after: leftIndex)
+        }
+        
+        charSet.insert(char)
+        currentSubstring = String(str[leftIndex...rightIndex])
+        
+        if currentSubstring.count &gt; longestSubstring.count {
+            longestSubstring = currentSubstring
+        }
+    }
+    
+    return longestSubstring
+}
+
+print(longestSubstring("abcabcbb"))
+
+/*
+ Get a character from a string using str.index(str.startIndex, offsetBy:)
+ */
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 1219}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>FormatVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
